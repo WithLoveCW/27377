@@ -60,38 +60,56 @@
 #messageGroup {
   position: absolute;
 
-  /* MOVE THE WHOLE MESSAGE GROUP UP/DOWN */
-  top: 41%;
+  /* POSITION INSIDE THE GOLD TICKET */
+  top: 68%;
+  left: 51%;
 
-  left: 50%;
-  transform: translateX(-50%);
+  /* WIDTH OF TEXT AREA */
+  width: 62%;
 
-  width: 100%;
+  /* CENTRE AND SLANT TO MATCH THE TICKET */
+  transform: translate(-50%, -50%) rotate(-7deg);
+  transform-origin: center center;
+
   z-index: 1;
   visibility: hidden;
 
-  /* KEEP BOTH MESSAGES STACKED WITH A FIXED GAP */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
 
   text-align: center;
 }
 
-	  #mainMessage {
-  /* CHANGE MAIN MESSAGE WIDTH HERE */
-  width: 48%;
-
+/* ===== MAIN MESSAGE ===== */
+#mainMessage {
+  width: 100%;
   margin: 0;
 
   font-family: 'Aesthet', serif;
   font-size: 29px;
-  line-height: 1;
+  line-height: 1.1;
 
   color: #212121;
+
+  overflow-wrap: break-word;
 }
 
+/* ===== SECONDARY MESSAGE ===== */
+#secondaryMessage {
+  width: 100%;
+  margin: 0;
+
+  font-family: 'Aesthet', serif;
+  font-size: 19px;
+  line-height: 1.15;
+
+  color: #212121;
+
+  overflow-wrap: break-word;
+}
 	  #secondaryMessage {
   /* CHANGE SECONDARY MESSAGE WIDTH HERE */
   width: 41%;
@@ -190,11 +208,11 @@ document.getElementById("secondaryMessage").textContent =
 
       // Silver box region (approx area where progress counts)
       const BOX_REGION = {
-        x: 0.07,
-        y: 0.24,
-        width: 0.86,
-        height: 0.40
-      };
+  x: 0.10,
+  y: 0.55,
+  width: 0.82,
+  height: 0.28
+};
 
       // Scratch state
       let isScratching = false;
